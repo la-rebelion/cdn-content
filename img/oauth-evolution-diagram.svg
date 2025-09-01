@@ -1,0 +1,233 @@
+<svg viewBox="0 0 1100 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1193b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d7a94;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#da7756;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b85d3f;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1193b0;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1193b0;stop-opacity:0.4" />
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1100" height="700" fill="#0a0a0a"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1193b0" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  
+  <!-- Timeline line -->
+  <line x1="100" y1="120" x2="1100" y2="120" stroke="url(#blueGradient)" stroke-width="3" opacity="0.6">
+    <animate attributeName="stroke-dasharray" values="0,2000;2000,0" dur="3s" fill="freeze"/>
+  </line>
+  
+  <!-- OAuth 2.0 Section -->
+  <g id="oauth2" opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="-200,0;0,0" dur="1s" begin="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.7s" fill="freeze"/>
+    
+    <!-- Year badge -->
+    <rect x="50" y="80" width="120" height="40" rx="20" fill="url(#blueGradient)" filter="url(#shadow)"/>
+    <text x="110" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">OAuth 2.0</text>
+    <text x="110" y="140" text-anchor="middle" fill="#1193b0" font-family="Arial, sans-serif" font-size="12">(2012)</text>
+    
+    <!-- Main container -->
+    <rect x="20" y="180" width="300" height="400" rx="15" fill="rgba(17,147,176,0.1)" stroke="url(#blueGradient)" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <text x="170" y="210" text-anchor="middle" fill="#1193b0" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Delegated Authorization</text>
+    
+    <!-- Flow boxes -->
+    <g transform="translate(40,240)">
+      <!-- Authorization Code Flow -->
+      <rect x="0" y="0" width="120" height="60" rx="8" fill="url(#blueAccent)" stroke="#1193b0" stroke-width="1"/>
+      <text x="60" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Auth Code</text>
+      <text x="60" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Client Credentials</text>
+      <text x="60" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Password</text>
+      
+      <!-- Implicit Flow -->
+      <rect x="140" y="0" width="120" height="60" rx="8" fill="rgba(218,119,86,0.3)" stroke="#da7756" stroke-width="1" stroke-dasharray="5,5"/>
+      <text x="200" y="20" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Implicit</text>
+      <text x="200" y="35" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="9">Resource Owner</text>
+      <text x="200" y="50" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="9">Refresh Token</text>
+    </g>
+    
+    <!-- Characteristics -->
+    <text x="40" y="340" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Characteristics:</text>
+    <text x="40" y="360" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Very flexible framework</text>
+    <text x="40" y="380" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Room for insecure choices</text>
+    <text x="40" y="400" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Multiple grant types</text>
+    <text x="40" y="420" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Access tokens only</text>
+    
+    <!-- Issues -->
+    <text x="40" y="460" fill="#da7756" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Security Concerns:</text>
+    <text x="40" y="480" fill="#da7756" font-family="Arial, sans-serif" font-size="11">• Implicit flow vulnerabilities</text>
+    <text x="40" y="500" fill="#da7756" font-family="Arial, sans-serif" font-size="11">• No identity layer</text>
+    <text x="40" y="520" fill="#da7756" font-family="Arial, sans-serif" font-size="11">• Inconsistent implementations</text>
+  </g>
+  
+  <!-- OIDC Section -->
+  <g id="oidc" opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="-200,0;0,0" dur="1s" begin="1.5s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.7s" fill="freeze"/>
+    
+    <!-- Year badge -->
+    <rect x="450" y="80" width="100" height="40" rx="20" fill="url(#orangeGradient)" filter="url(#shadow)"/>
+    <text x="500" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">OIDC</text>
+    <text x="500" y="140" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="12">(2014)</text>
+    
+    <!-- Main container -->
+    <rect x="370" y="180" width="260" height="400" rx="15" fill="rgba(218,119,86,0.1)" stroke="url(#orangeGradient)" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <text x="500" y="210" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Identity Layer on OAuth2</text>
+    
+    <!-- Flow box -->
+    <g transform="translate(400,240)">
+      <rect x="0" y="0" width="200" height="60" rx="8" fill="url(#orangeGradient)" stroke="#da7756" stroke-width="1"/>
+      <text x="100" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Flows:</text>
+      <text x="100" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Auth Code + ID Token</text>
+      <text x="100" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Hybrid flows</text>
+    </g>
+    
+    <!-- ID Token -->
+    <g transform="translate(400,320)">
+      <rect x="0" y="0" width="200" height="50" rx="8" fill="rgba(17,147,176,0.3)" stroke="#1193b0" stroke-width="1"/>
+      <text x="100" y="20" text-anchor="middle" fill="#1193b0" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ID Token</text>
+      <text x="100" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">JWT with user claims</text>
+    </g>
+    
+    <!-- Features -->
+    <text x="390" y="390" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Features:</text>
+    <text x="390" y="410" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Standardized user identity</text>
+    <text x="390" y="430" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• UserInfo endpoint</text>
+    <text x="390" y="450" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Discovery mechanism</text>
+    <text x="390" y="470" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Session management</text>
+    
+    <!-- Purpose -->
+    <text x="390" y="510" fill="#da7756" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Answers:</text>
+    <text x="390" y="530" fill="#da7756" font-family="Arial, sans-serif" font-size="11">"Who is the user?"</text>
+    <text x="390" y="550" fill="#da7756" font-family="Arial, sans-serif" font-size="11">Built on OAuth2 mechanics</text>
+  </g>
+  
+  <!-- OAuth 2.1 Section -->
+  <g id="oauth21" opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="-200,0;0,0" dur="1s" begin="2.5s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1" dur="0.8s" begin="2.7s" fill="freeze"/>
+    
+    <!-- Year badge -->
+    <rect x="750" y="80" width="120" height="40" rx="20" fill="url(#blueGradient)" filter="url(#glow)"/>
+    <text x="810" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">OAuth 2.1</text>
+    <text x="810" y="140" text-anchor="middle" fill="#1193b0" font-family="Arial, sans-serif" font-size="12">(Draft ~2020-2023)</text>
+    
+    <!-- Main container -->
+    <rect x="680" y="180" width="320" height="400" rx="15" fill="rgba(17,147,176,0.15)" stroke="url(#blueGradient)" stroke-width="3" filter="url(#glow)"/>
+    
+    <!-- Title -->
+    <text x="840" y="210" text-anchor="middle" fill="#1193b0" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Curated Security Profile</text>
+    
+    <!-- Secure flows -->
+    <g transform="translate(700,240)">
+      <rect x="0" y="0" width="120" height="60" rx="8" fill="url(#blueGradient)" stroke="#1193b0" stroke-width="2" filter="url(#glow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Tokens:</text>
+      <text x="60" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Bearer Tokens</text>
+      <text x="60" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Refresh Token</text>
+      
+      <!-- Deprecated -->
+      <rect x="140" y="0" width="120" height="60" rx="8" fill="rgba(218,119,86,0.2)" stroke="#da7756" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="200" y="20" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Deprecated:</text>
+      <text x="200" y="35" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="9">Implicit Flow</text>
+      <text x="200" y="50" text-anchor="middle" fill="#da7756" font-family="Arial, sans-serif" font-size="9">Resource Owner</text>
+    </g>
+    
+    <!-- Best practices -->
+    <text x="700" y="340" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Best Practices Included:</text>
+    <text x="700" y="360" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• PKCE required</text>
+    <text x="700" y="380" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Strict redirect URI matching</text>
+    <text x="700" y="400" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Secure by default</text>
+    <text x="700" y="420" fill="#cccccc" font-family="Arial, sans-serif" font-size="11">• Modern security extensions</text>
+    
+    <!-- Security improvements -->
+    <text x="700" y="460" fill="#1193b0" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Security Improvements:</text>
+    <text x="700" y="480" fill="#1193b0" font-family="Arial, sans-serif" font-size="11">• Removes unsafe options</text>
+    <text x="700" y="500" fill="#1193b0" font-family="Arial, sans-serif" font-size="11">• Improved threat model</text>
+    <text x="700" y="520" fill="#1193b0" font-family="Arial, sans-serif" font-size="11">• Consistent implementations</text>
+    
+    <!-- Evolution note -->
+    <text x="700" y="560" fill="#da7756" font-family="Arial, sans-serif" font-size="11" font-style="italic">Not a new standard, but evolved security</text>
+  </g>
+  
+  <!-- Connection arrows -->
+  <g id="arrows" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="3.5s" fill="freeze"/>
+    
+    <!-- OAuth 2.0 to OIDC -->
+    <path d="M 320 350 Q 350 300 370 350" fill="none" stroke="url(#orangeGradient)" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+    
+    <!-- OIDC to OAuth 2.1 -->
+    <path d="M 630 350 Q 660 300 680 350" fill="none" stroke="url(#blueGradient)" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+    
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#1193b0" opacity="0.9"/>
+      </marker>
+    </defs>
+  </g>
+  
+  <!-- Timeline labels -->
+  <g id="timelineLabels" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="4s" fill="freeze"/>
+    
+    <text x="110" y="75" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="12">2012</text>
+    <text x="500" y="75" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="12">2014</text>
+    <text x="810" y="75" text-anchor="middle" fill="#666" font-family="Arial, sans-serif" font-size="12">2020-2023</text>
+  </g>
+  
+  <!-- Floating particles for futuristic feel -->
+  <g id="particles" opacity="0.3">
+    <circle cx="200" cy="200" r="2" fill="#1193b0">
+      <animate attributeName="cy" values="200;150;200" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="300" r="1.5" fill="#da7756">
+      <animate attributeName="cy" values="300;250;300" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="400" r="2.5" fill="#1193b0">
+      <animate attributeName="cy" values="400;350;400" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold" opacity="0">
+    OAuth Evolution: Security Through Maturity
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="4.5s" fill="freeze"/>
+  </text>
+</svg>
